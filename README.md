@@ -1,4 +1,4 @@
-# PV BOT SRAXIOM
+# PV BOT SRAXIUM
 
 This repository serves as the new home for the PV discord bot. It is currently in flux as we transition from the old [PV bot](https://github.com/Progressive-Victory/the-discord-bot) to this one. 
 
