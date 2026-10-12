@@ -1,7 +1,7 @@
 import { Module } from '@spraxium/common';
-import { SimpleModule } from './modules/simple/simple.module';
+import { ExampleModule } from './modules/example/example.module';
 
 @Module({
-    imports: [SimpleModule]
+    imports: [ExampleModule]
 })
 export class AppModule {}
