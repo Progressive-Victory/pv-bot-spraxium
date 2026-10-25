@@ -1,3 +1,4 @@
+import "dotenv/config"
 import { IntentPreset, SpraxiumFactory } from '@spraxium/core';
 import { EnvValidator } from '@spraxium/env';
 import { Logger } from '@spraxium/logger';

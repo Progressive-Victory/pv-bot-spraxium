@@ -39,7 +39,6 @@ export class PVApiConnection {
     schema?: ZodType,
   ): Promise<R | void> {
     if (!this.jwt) throw Error("run auth function");
-    // console.log(this.host, options.fullRoute, options.query?.toString());
     const url = new URL(this.host + options.fullRoute);
     options.query?.forEach((val: string, key: string) => {
       url.searchParams.append(key, val);
@@ -52,7 +51,7 @@ export class PVApiConnection {
         Authorization: "Bot " + this.jwt,
       },
     });
-    if (res.status === 401 && options.attempt && options.attempt > 2) {
+    if (res.status === 401 && options.attempt && options.attempt < 2) {
       this.jwt = null;
       options.attempt++;
       return this.request<R>(options, schema);

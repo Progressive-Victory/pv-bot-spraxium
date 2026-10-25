@@ -49,7 +49,8 @@ Finally, copy `./.env.sample` to a file `./.env` then edit the following vaules 
 ```txt
 
 # Discord bot token — https://discord.com/developers/applications
-DISCORD_TOKEN= "<bot_token>"
+PV_API_URL="<pv api url>"
+DISCORD_TOKEN="<bot_token>"
 
 ```
 
