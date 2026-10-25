@@ -1,7 +1,10 @@
 import { Module } from '@spraxium/common';
-import { ExampleModule } from './modules/example/example.module';
+import { ExampleModule, SettingsModule } from './modules';
 
 @Module({
-    imports: [ExampleModule]
+    imports: [
+        ExampleModule,
+        SettingsModule
+    ]
 })
 export class AppModule {}
