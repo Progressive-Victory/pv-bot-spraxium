@@ -80,6 +80,16 @@ for people coming after you, make sure to leave one in this module.
 
 File: `src\modules\example\example.module.ts`
 
+### Mute
+
+Handles the `/mute` command. When a user is muted, they are added to a list of mutes stored in memory by the [mute service provider](src/modules/mute/mute.service.ts). When a user is manually
+muted without using the command, the mute duration is set to 24 hours. Once the mute duration runs out the user will be immediately unmuted. If they are not in a voice chat when the mute expires,
+they will automatically be unmuted the next time they join.
+
+Currently only voice mutes are supported.
+
+File: `src\modules\mute\mute.module.ts`
+
 ### YOUR MODULE HERE
 
 ## Commands
@@ -93,6 +103,10 @@ Currently exists as an example command for how to structure your own commands. I
 
 The view is done via the file `src\modules\example\commands\example.command.ts`.
 The command's action is handled by the file `src\modules\example\handlers\example-command.handler.ts`.
+
+### Mute
+
+Mutes a user for a given duration. The user can be muted for a set duration anywhere between 3 minutes and 24 hours. Administrators and bots may not be muted.
 
 ## Features
 

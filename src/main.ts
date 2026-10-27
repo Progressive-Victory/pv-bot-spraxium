@@ -1,8 +1,9 @@
 import { AppEnv } from './app.env'
 import { AppModule } from './app.module'
-import { IntentPreset, SpraxiumFactory } from '@spraxium/core'
+import { SpraxiumFactory } from '@spraxium/core'
 import { EnvValidator } from '@spraxium/env'
 import { Logger } from '@spraxium/logger'
+import { GatewayIntentBits } from 'discord.js'
 
 async function main(): Promise<void> {
     const logger = new Logger('Main')
@@ -11,7 +12,15 @@ async function main(): Promise<void> {
 
     app.useModule(AppModule)
     app.provide(AppEnv, environment)
-    app.intents(IntentPreset.Standard)
+    // Guilds and GuildMessages are the default intents
+    app.intents([
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        // needed to view vc join/leave events
+        GatewayIntentBits.GuildVoiceStates,
+        // needed to view audit log events
+        GatewayIntentBits.GuildModeration,
+    ])
 
     logger.info('Starting application...')
     await app.listen()
