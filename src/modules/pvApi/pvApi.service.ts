@@ -1,3 +1,4 @@
+import { AppEnv } from '../../app.env'
 import { InternalRequest, RequestData, RequestMethod, RouteLike } from './types'
 import { Injectable, type SpraxiumOnBoot } from '@spraxium/common'
 import { ZodType } from 'zod'
@@ -5,10 +6,45 @@ import { ZodType } from 'zod'
 @Injectable()
 export class PvApiService implements SpraxiumOnBoot {
     jwt: string | null = null
-    host: string
+    host: string | null = null
+    routes = {
+        discordWarns: '/discord/warns' as const,
 
-    constructor(host: string) {
-        this.host = host
+        discordWarn(warnId: string): `/discord/warns/${string}` {
+            return `/discord/warns/${warnId}`
+        },
+
+        discordEvents: '/discordEvents' as const,
+
+        latestDiscordEvent(
+            eventDiscordId: string
+        ): `/discordEvents/byDiscordId/${string}/latest` {
+            return `/discordEvents/byDiscordId/${eventDiscordId}/latest`
+        },
+
+        discordEvent(id: number): `/discordEvents/${string}` {
+            return `/discordEvents/${id}`
+        },
+
+        discordEventAttendance(
+            eventId: number
+        ): `/discordEvents/${string}/attendance` {
+            return `/discordEvents/${eventId}/attendance`
+        },
+
+        setting(name: string): `/settings/${string}` {
+            return `/settings/${name}`
+        },
+
+        discordStateRole(abbr: string): `/discord/state-roles/${string}` {
+            return `/discord/state-roles/${abbr}`
+        },
+    }
+
+    constructor(private readonly env: AppEnv) {
+        if (!this.env.PV_API_URL)
+            throw new Error("ERROR: Missing environment variable 'PV_API_URL`")
+        this.host ??= this.env.PV_API_URL
     }
 
     async auth(token: string) {
@@ -31,7 +67,8 @@ export class PvApiService implements SpraxiumOnBoot {
         schema?: ZodType
     ): Promise<R | void> {
         const doFetch = async (options: InternalRequest) => {
-            if (!this.jwt) await this.auth(process.env.PV_DISCORD_TOKEN!)
+            if (!this.jwt) await this.auth(this.env.PV_DISCORD_TOKEN)
+
             const url = new URL(this.host + options.fullRoute)
             options.query?.forEach((val: string, key: string) => {
                 url.searchParams.append(key, val)
