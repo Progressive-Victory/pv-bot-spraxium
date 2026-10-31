@@ -1,6 +1,6 @@
 # PV BOT SPRAXIUM
 
-This repository serves as the new home for the PV discord bot. It is currently in flux as we transition from the old [PV bot](https://github.com/Progressive-Victory/the-discord-bot) to this one. 
+This repository serves as the new home for the PV discord bot. It is currently in flux as we transition from the old [PV bot](https://github.com/Progressive-Victory/the-discord-bot) to this one.
 
 This bot supports operations in the Progressive Victory Discord Server. To join, sign up on the [website](https://www.progressivevictory.win/volunteer).
 
@@ -11,11 +11,10 @@ The Progressive Victory Discord bot runs in a [Docker](https://docs.docker.com/g
 - [pnpm](https://pnpm.io/) to manage dependencies
 - [MySQL](https://dev.mysql.com/doc/refman/8.4/en/)
 - [express.js](https://expressjs.com/en/api.html) to implement RESTful APIs
-  - **NOTE:** The bot now requires the api repo to be running concurrently to perform any interaction with the database. See the [api repo](https://github.com/Progressive-Victory/the-api) for instructions on how to set that up.
+    - **NOTE:** The bot now requires the api repo to be running concurrently to perform any interaction with the database. See the [api repo](https://github.com/Progressive-Victory/the-api) for instructions on how to set that up.
 - [spraxium](https://spraxium.com/en) as a framework for the commands and features
 
 This version of the bot adds in the [spraxium](https://spraxium.com/en) dependency, and transitions to using its forms and functions.
-
 
 ## Contributing
 
@@ -36,7 +35,6 @@ We recommend you install the following software:
 - [git](https://git-scm.com/downloads)
 - [Visual Studio Code](https://code.visualstudio.com/Download)
 - [Node.js](https://nodejs.org/en/download) v20.12.2 or later.
-
 
 Follow the installation instructions for Node.js. Then, run the following:
 
@@ -71,7 +69,6 @@ pnpm dev
 
 If the bot fails to run, check that all values are correct in the `./.env` file. Otherwise, if everything succeeds, you should be able to send commands to the bot via the Dev Discord server.
 
-
 ## Modules
 
 Modules group behaviour and capabilities together into topics. These topics are related by functionality. A single module can hold multiple commands or features.
@@ -84,7 +81,6 @@ for people coming after you, make sure to leave one in this module.
 File: `src\modules\example\example.module.ts`
 
 ### YOUR MODULE HERE
-
 
 ## Commands
 
