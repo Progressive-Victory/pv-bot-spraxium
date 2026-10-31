@@ -3,6 +3,7 @@ import { AppModule } from './app.module'
 import { IntentPreset, SpraxiumFactory } from '@spraxium/core'
 import { EnvValidator } from '@spraxium/env'
 import { Logger } from '@spraxium/logger'
+import 'dotenv/config'
 
 async function main(): Promise<void> {
     const logger = new Logger('Main')
