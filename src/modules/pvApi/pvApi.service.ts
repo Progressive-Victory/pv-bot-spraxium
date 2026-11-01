@@ -67,7 +67,7 @@ export class PvApiService implements SpraxiumOnBoot {
         schema?: ZodType
     ): Promise<R | void> {
         const doFetch = async (options: InternalRequest) => {
-            if (!this.jwt) await this.auth(this.env.PV_DISCORD_TOKEN)
+            if (!this.jwt) await this.auth(this.env.token)
 
             const url = new URL(this.host + options.fullRoute)
             options.query?.forEach((val: string, key: string) => {
@@ -166,6 +166,6 @@ export class PvApiService implements SpraxiumOnBoot {
             throw new Error(
                 "ERROR: Missing environment variable 'PV_DISCORD_TOKEN'"
             )
-        await this.auth(process.env.PV_DISCORD_TOKEN)
+        await this.auth(this.env.token)
     }
 }
