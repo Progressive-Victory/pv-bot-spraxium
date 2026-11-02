@@ -4,3 +4,8 @@ output/
 node_modules/
 .env
 *.log
+/.direnv
+/.envrc
+/flake.lock
+/flake.nix
+/pnpm-workspace.yaml
