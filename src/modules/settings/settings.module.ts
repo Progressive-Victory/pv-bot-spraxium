@@ -1,9 +1,11 @@
 import { Module } from "@spraxium/common"
 import { SettingsCommand } from "./commands/settings.command";
-import { ChannelHandler } from "./handlers/settings-channel.handler";
+import { SettingsChannelHandler } from "./handlers/settings-channel.handler";
+import { PvApiService } from "../pvApi/pvApi.service";
 
 @Module({
     commands: [SettingsCommand],
-    handlers: [ChannelHandler]
+    handlers: [SettingsChannelHandler],
+    providers: [PvApiService]
 })
 export class SettingsModule {}
