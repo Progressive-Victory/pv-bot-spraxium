@@ -10,7 +10,6 @@ export class RepeatMessagesCommandHandler {
 
   async handle(@Ctx() interaction: ChatInputCommandInteraction): Promise<void> {
     const modal = this.modals.build(RepeatMessageModal);
-    console.log("Command handler hit");
     await interaction.showModal(modal);
   }
 }

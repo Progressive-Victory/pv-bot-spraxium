@@ -12,8 +12,6 @@ export class RepeatMessageHandler {
     @ModalTextField('test_field') test_field: string,
     @Ctx() ctx: ModalContext,
   ): Promise<void> {
-    console.log("Hello!");
-    console.log(test_field);
     await ctx.reply({
       content: `Testing '${test_field}.`,
       flags: 'Ephemeral',
