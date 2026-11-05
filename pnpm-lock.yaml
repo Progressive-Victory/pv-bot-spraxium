@@ -11,6 +11,9 @@ importers:
       '@spraxium/common':
         specifier: ^0.3.0
         version: 0.3.0(discord.js@14.27.0)
+      '@spraxium/components':
+        specifier: ^1.0.2
+        version: 1.0.2(@spraxium/common@0.3.0(discord.js@14.27.0))(@spraxium/core@0.3.0(discord.js@14.27.0))
       '@spraxium/core':
         specifier: ^0.3.0
         version: 0.3.0(discord.js@14.27.0)
@@ -286,7 +289,7 @@ packages:
     resolution: {integrity: sha512-SeE8JPwW1xs1tHeNycjUtUBdhorRa8o4jlvjwk49R7/Z291i+4DQa7JJIgOm/TaYQZx+QrPQbVJ/9c8dMIZN8Q==}
 
   '@progressive-victory/the-contracts@https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/19b768e67ebf07f097c1bc141d80e69486dd1856#path:/dist':
-    resolution: {gitHosted: true, integrity: sha512-rntyaMsLf8cZB/8b3rmzoqeW6xaKmrS3+CfMRgoOLyEAWHFSgEzHIJg01rN9i4HA7JVRZoM6+E/u5jO8Ob5leQ==, path: /dist, tarball: https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/19b768e67ebf07f097c1bc141d80e69486dd1856}
+    resolution: {gitHosted: true, integrity: sha512-rntyaMsLf8cZB/8b3rmzoqeW6xaKmrS3+CfMRgoOLyEAWHFSgEzHIJg01rN9i4HA7JVRZoM6+E/u5jO8Ob5leQ==, tarball: https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/19b768e67ebf07f097c1bc141d80e69486dd1856}
     version: 10.1.0
 
   '@quansync/fs@1.1.0':
@@ -421,6 +424,22 @@ packages:
     peerDependencies:
       discord.js: ^14.27.0
 
+  '@spraxium/components@1.0.2':
+    resolution: {integrity: sha512-4tr4cGhbHbzIHb31jfi501ynwsdaSGRxzv47isiCXTSQqtVwBHnVY5HyXdRGt/HKZadHA8GJdhTigvNFtX6Pqw==}
+    engines: {node: ^22.23.4 || ^24.22.1 || ^26.12.1}
+    peerDependencies:
+      '@spraxium/common': 0.3.2
+      '@spraxium/core': 0.3.2
+      better-sqlite3: '>=9'
+      ioredis: '>=5'
+    peerDependenciesMeta:
+      '@spraxium/core':
+        optional: true
+      better-sqlite3:
+        optional: true
+      ioredis:
+        optional: true
+
   '@spraxium/core@0.3.0':
     resolution: {integrity: sha512-v3gyrWpeZddIAsJ0yT24QjJoEc1X89g1mFzJak+B93Qcyx/iQ9K6cS+f3vm9jN+l2XylyewRoUs3yHt6xjSFFA==}
     engines: {node: '>=22.23.2 <27'}
@@ -434,6 +453,10 @@ packages:
   '@spraxium/logger@0.3.0':
     resolution: {integrity: sha512-Gb6u2Efr/ZW5iT5q2N50xen5qSqUmUEAfd6/myLnOT51gkczZfrQI0e6KzUg2IKZ8795nALg3AGVyLQTlJfBoQ==}
     engines: {node: '>=22.23.2 <27'}
+
+  '@spraxium/logger@0.3.2':
+    resolution: {integrity: sha512-4JfMZ/8gMeWwJeMHjEZFxlgukFu8wj4za5VgU6gFCn417ZuZjJyRSBOWkRmLKzc8ELoFelgqmpSYm1fkS9WiVQ==}
+    engines: {node: ^22.23.4 || ^24.22.1 || ^26.12.1}
 
   '@swc/core-darwin-arm64@1.16.20':
     resolution: {integrity: sha512-i7NFSDnuE6tdBvBgmoVKKmburgcwZt/FZK2IusJaVGrjFrMUC1hrgE3RI+Kt9RhYM7vHvQj0W9j53zSxKEMbWQ==}
@@ -678,67 +701,79 @@ packages:
     resolution: {integrity: sha512-wdL2XmTiZixAOaHk9Z0JJZ8u9Qm8d333Zjpc6gaxXFX+UR5BlsfxZ7a2+2Rm71pamppsPYGUGFq2oVLbh6DISw==}
     cpu: [arm64]
     os: [android]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-darwin-arm64@0.19.0':
     resolution: {integrity: sha512-7sNJa6XJhyetnTy64jw3NEi4YgUcezHk1G5GH9FSvXAuC8wIlbaOwT9lgq5qo5sspjrZJQlBR1TWflP49uRpMw==}
     cpu: [arm64]
     os: [darwin]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-darwin-x64@0.19.0':
     resolution: {integrity: sha512-pTC7dYEc59isdyizc3nsuyFNBu2LU5wMYZ1be6UMr59PY/AJNtO1aBLWV0MgL/z7C1nv/2sX4TNjGgKLoeevJw==}
     cpu: [x64]
     os: [darwin]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-freebsd-x64@0.19.0':
     resolution: {integrity: sha512-xrZjF6XOEwyLOiDIfrwDdRCS6ghxcJeirNC1KivQhVcUwlRonaU79S3/Uiyx3lBylPnT8qKJ3/aMT+H52nGTJQ==}
     cpu: [x64]
     os: [freebsd]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-linux-arm-gnu@0.19.0':
     resolution: {integrity: sha512-0OyIH53C0I1CbADHn9FSdCfX5qbpeLwJhmOVhonFJNYheybOnkSJ50qGMfTJIb8y5zrwqvLs7FVBvz6Fk8maZg==}
     cpu: [arm]
     os: [linux]
     libc: [glibc]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-linux-arm-musl@0.19.0':
     resolution: {integrity: sha512-z/iPfkCOCSXE34VXNt0uP1ORSW+4mEa9b5CiJcWZeqZH08g49bFU/jRM2T04f+Wpw5mJ6HIzNBiojxeAbrHjeg==}
     cpu: [arm]
     os: [linux]
     libc: [musl]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-linux-arm64-gnu@0.19.0':
     resolution: {integrity: sha512-jLNTi+gzaRwBJ+gwhCJ+rDb5dmx/8hEBx93UWd7hjMSqPTL1D1wvVSvXVAldV5kALvju7b0/m51EHEhs4+I1fA==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-linux-arm64-musl@0.19.0':
     resolution: {integrity: sha512-YwyPIdW/rN2Fmv0MTFWi47FaB3F9g+2b+sJISyAw83Yd60RWH4T3Nx6XkAHHVN+uKJNBAd6So7/BVihSiFYvuQ==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-linux-x64-gnu@0.19.0':
     resolution: {integrity: sha512-/vskaAXVX3ESR43FiTdfiYS7z1b9uoQJwVQ/0RgUHgN2sWoAyCZs+aX4CgU7eKGIHTVfp9VFwv+c+2XchYiEtQ==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-linux-x64-musl@0.19.0':
     resolution: {integrity: sha512-FuXL5igeSKib9Rye02TdH+D6SQezTyGxIATMu1Qsn/QywrzwpGl35OLpS2C1x5vpGLeVE2XgiLd5mVPFHmIglQ==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-win32-arm64@0.19.0':
     resolution: {integrity: sha512-YuJAe7zEKT1Xa7LuHlhGJpPnYQeVtvo0rZvNjJRqkH0hQGOw4C8QeP30Tg5VKGzZfo2x8CjhjEhKt4TmLwfmdg==}
     cpu: [arm64]
     os: [win32]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-core/binding-win32-x64@0.19.0':
     resolution: {integrity: sha512-o8iY/mXwlRkedp0LNTr4+TEfXTPQwoNZmv6k+1WIAd1ZXEn8xJJTBCtB0osaVvdZo/x/cNmV16UrWrrGpM5Mvw==}
     cpu: [x64]
     os: [win32]
+    deprecated: yuku-codegen is pure JavaScript since 0.14
 
   '@yuku-toolchain/types@0.19.0':
     resolution: {integrity: sha512-tFkNbsP4WXX9UMUC5syJGdK9dPMLK0PPaIuXCcCYH75sZ8MrebfBZ2XvCILRTw8AgLivSSCfDa4R67iYBDa4Kg==}
@@ -1483,6 +1518,19 @@ snapshots:
       discord.js: 14.27.0
       reflect-metadata: 0.2.2
 
+  '@spraxium/components@1.0.2(@spraxium/common@0.3.0(discord.js@14.27.0))(@spraxium/core@0.3.0(discord.js@14.27.0))':
+    dependencies:
+      '@discordjs/builders': 1.14.1
+      '@spraxium/common': 0.3.0(discord.js@14.27.0)
+      '@spraxium/logger': 0.3.2
+      discord.js: 14.27.0
+      reflect-metadata: 0.2.2
+    optionalDependencies:
+      '@spraxium/core': 0.3.0(discord.js@14.27.0)
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   '@spraxium/core@0.3.0(discord.js@14.27.0)':
     dependencies:
       '@spraxium/common': 0.3.0(discord.js@14.27.0)
@@ -1497,6 +1545,10 @@ snapshots:
       reflect-metadata: 0.2.2
 
   '@spraxium/logger@0.3.0':
+    dependencies:
+      cli-table3: 0.6.5
+
+  '@spraxium/logger@0.3.2':
     dependencies:
       cli-table3: 0.6.5
 
