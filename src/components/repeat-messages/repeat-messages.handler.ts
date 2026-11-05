@@ -11,7 +11,7 @@ export class RepeatMessageHandler {
   async handle(
     @ModalTextField('test_field') test_field: string,
     @Ctx() ctx: ModalContext,
-  ): Promise<Void> {
+  ): Promise<void> {
     console.log("Hello!");
     console.log(test_field);
     await ctx.reply({
