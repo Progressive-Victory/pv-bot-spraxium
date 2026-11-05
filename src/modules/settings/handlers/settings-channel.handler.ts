@@ -1,19 +1,28 @@
-import { Ctx, SlashChannelOption, SlashCommandHandler, SlashOptionChoice, SlashStringOption } from "@spraxium/common";
-import { SettingsCommand } from "../commands/settings.command";
-import { ChatInputCommandInteraction, GuildBasedChannel } from "discord.js";
-import { PvApiService } from "../../pvApi/pvApi.service";
+import { PvApiService } from '../../pvApi/pvApi.service'
+import { SettingsCommand } from '../commands/settings.command'
+import {
+    Ctx,
+    SlashChannelOption,
+    SlashCommandHandler,
+    SlashOptionChoice,
+    SlashStringOption,
+} from '@spraxium/common'
+import { ChatInputCommandInteraction, GuildBasedChannel } from 'discord.js'
 
-@SlashCommandHandler(SettingsCommand, { sub: "channel" })
+@SlashCommandHandler(SettingsCommand, { sub: 'channel' })
 export class SettingsChannelHandler {
     constructor(private readonly pvApiService: PvApiService) {}
 
     async handle(
         @Ctx() interaction: ChatInputCommandInteraction,
-        @SlashStringOption("setting") setting: SlashOptionChoice<string> | null,
-        @SlashChannelOption("channel") channel: GuildBasedChannel | null
+        @SlashStringOption('setting') setting: SlashOptionChoice<string> | null,
+        @SlashChannelOption('channel') channel: GuildBasedChannel | null
     ): Promise<void> {
         if (!setting || !channel) {
-            await interaction.reply({ content: "Invalid request", flags: "Ephemeral" })
+            await interaction.reply({
+                content: 'Invalid request',
+                flags: 'Ephemeral',
+            })
             return
         }
 
@@ -21,14 +30,18 @@ export class SettingsChannelHandler {
 
         try {
             await this.pvApiService.put(endpoint, {
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ value: channel.id })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ value: channel.id }),
             })
-            await interaction.reply({ content: `Updated ${setting.name} to channel [#${channel.name}](${channel.url}).`})
+            await interaction.reply({
+                content: `Updated ${setting.name} to channel [#${channel.name}](${channel.url}).`,
+            })
             return
         } catch {
-            await interaction.reply({ content: "Error when updating settings channel. Please notify the engineering team via the #bug-reports channel."})
+            await interaction.reply({
+                content:
+                    'Error when updating settings channel. Please notify the engineering team via the #bug-reports channel.',
+            })
         }
-
     }
 }
