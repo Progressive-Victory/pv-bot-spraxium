@@ -31,6 +31,10 @@ export class PvApiService implements SpraxiumOnBoot {
         ): `/discordEvents/${string}/attendance` {
             return `/discordEvents/${eventId}/attendance`
         },
+        
+        discordUser(discordUserId: string): `/discordUsers/${string}` {
+          return `/discordUsers/${discordUserId}`
+        },
 
         setting(name: string): `/settings/${string}` {
             return `/settings/${name}`

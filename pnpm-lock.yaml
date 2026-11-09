@@ -28,7 +28,7 @@ importers:
         version: 17.4.2
       pv-contracts:
         specifier: github:Progressive-Victory/the-contracts#main&path:/dist
-        version: '@progressive-victory/the-contracts@https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/19b768e67ebf07f097c1bc141d80e69486dd1856#path:/dist'
+        version: '@progressive-victory/the-contracts@https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/d06cb6ff0d1e69aa51dcb761af2a07edf6716dec#path:/dist'
       zod:
         specifier: ^4.4.3
         version: 4.6.7
@@ -285,9 +285,9 @@ packages:
   '@oxc-project/types@0.155.0':
     resolution: {integrity: sha512-SeE8JPwW1xs1tHeNycjUtUBdhorRa8o4jlvjwk49R7/Z291i+4DQa7JJIgOm/TaYQZx+QrPQbVJ/9c8dMIZN8Q==}
 
-  '@progressive-victory/the-contracts@https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/19b768e67ebf07f097c1bc141d80e69486dd1856#path:/dist':
-    resolution: {gitHosted: true, integrity: sha512-rntyaMsLf8cZB/8b3rmzoqeW6xaKmrS3+CfMRgoOLyEAWHFSgEzHIJg01rN9i4HA7JVRZoM6+E/u5jO8Ob5leQ==, path: /dist, tarball: https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/19b768e67ebf07f097c1bc141d80e69486dd1856}
-    version: 10.1.0
+  '@progressive-victory/the-contracts@https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/d06cb6ff0d1e69aa51dcb761af2a07edf6716dec#path:/dist':
+    resolution: {gitHosted: true, integrity: sha512-NZptTb4Srnzcp20dcr8NO36tNcNcg+r8NFNIvz72xElSGWRVf2hZrc2fcvdUpPUPT4Y8B5NnIppLP+lG0UOW2g==, path: /dist, tarball: https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/d06cb6ff0d1e69aa51dcb761af2a07edf6716dec}
+    version: 10.3.0
 
   '@quansync/fs@1.1.0':
     resolution: {integrity: sha512-qAPG/t3HqML1TlN7sY/pTbEjzFVAKsMjNNMGheyDosro+kT4iw2KCUoHcVdmliwWjorm4elZbgNQyU2eD97eDg==}
@@ -1394,7 +1394,7 @@ snapshots:
 
   '@oxc-project/types@0.155.0': {}
 
-  '@progressive-victory/the-contracts@https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/19b768e67ebf07f097c1bc141d80e69486dd1856#path:/dist':
+  '@progressive-victory/the-contracts@https://codeload.github.com/Progressive-Victory/the-contracts/tar.gz/d06cb6ff0d1e69aa51dcb761af2a07edf6716dec#path:/dist':
     dependencies:
       '@fastify/multipart': 10.1.6
       zod: 4.6.7
