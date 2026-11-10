@@ -1,8 +1,7 @@
-import { ExampleModule } from './modules/example/example.module'
-import { MuteModule } from './modules/mute/mute.module'
+import { ExampleModule, SettingsModule, MuteModule } from './modules'
 import { Module } from '@spraxium/common'
 
 @Module({
-    imports: [ExampleModule, MuteModule],
+    imports: [ExampleModule, SettingsModule, MuteModule],
 })
 export class AppModule {}
