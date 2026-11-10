@@ -6,6 +6,6 @@ import { Module } from '@spraxium/common'
 @Module({
     commands: [SettingsCommand],
     handlers: [SettingsChannelHandler],
-    providers: [PvApiService],
+    imports: [PvApiService],
 })
 export class SettingsModule {}
