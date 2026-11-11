@@ -3,7 +3,7 @@ import { MemberLeaveListener } from './memberLeaveListener'
 import { Module } from '@spraxium/common'
 
 @Module({
-  listeners: [MemberLeaveListener],
-  providers: [PvApiService]
+    listeners: [MemberLeaveListener],
+    providers: [PvApiService],
 })
 export class ListenersModule {}
