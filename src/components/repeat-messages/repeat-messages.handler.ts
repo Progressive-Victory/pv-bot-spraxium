@@ -9,11 +9,11 @@ import { RepeatMessageModal } from './repeat-messages.modal';
 @ModalHandler(RepeatMessageModal)
 export class RepeatMessageHandler {
   async handle(
-    @ModalTextField('test_field') test_field: string,
+    @ModalTextField('description_field') description_field: string,
     @Ctx() ctx: ModalContext,
   ): Promise<void> {
     await ctx.reply({
-      content: `Testing '${test_field}.`,
+      content: `Testing '${description_field}.`,
       flags: 'Ephemeral',
     });
   }
