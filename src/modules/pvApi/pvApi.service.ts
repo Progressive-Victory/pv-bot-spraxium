@@ -91,12 +91,11 @@ export class PvApiService implements SpraxiumOnBoot {
         }
 
         if (!res.ok) {
-            console.error(
-                Error(
-                    `API threw exception: ${res.status} ${res.statusText}${res.body ? '\n' + (await res.text()) : ''}`
-                )
+            const err = Error(
+                `API threw exception: ${res.status} ${res.statusText}${res.body ? '\n' + (await res.text()) : ''}`
             )
-            return
+            console.error(err)
+            throw err
         }
 
         return this.parseResponse<R>(res, schema)
