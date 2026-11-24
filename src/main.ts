@@ -16,6 +16,7 @@ async function main(): Promise<void> {
     // Guilds and GuildMessages are the default intents
     app.intents([
         GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessages,
         // needed to view vc join/leave events
         GatewayIntentBits.GuildVoiceStates,

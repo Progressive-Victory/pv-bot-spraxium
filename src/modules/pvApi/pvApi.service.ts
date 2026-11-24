@@ -39,6 +39,10 @@ export class PvApiService implements SpraxiumOnBoot {
         discordStateRole(abbr: string): `/discord/state-roles/${string}` {
             return `/discord/state-roles/${abbr}`
         },
+
+        discordUser(discordUserId: string): `/discordUsers/${string}` {
+            return `/discordUsers/${discordUserId}`
+        },
     }
 
     constructor(private readonly env: AppEnv) {
