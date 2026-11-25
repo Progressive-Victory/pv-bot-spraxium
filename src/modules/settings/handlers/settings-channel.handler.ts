@@ -15,7 +15,7 @@ export class SettingsChannelHandler {
 
     async handle(
         @Ctx() interaction: ChatInputCommandInteraction,
-        @SlashStringOption('setting') setting: SlashOptionChoice<string> | null,
+        @SlashStringOption('setting') setting: string | null,
         @SlashChannelOption('channel') channel: GuildBasedChannel | null
     ): Promise<void> {
         if (!setting || !channel) {
@@ -26,7 +26,18 @@ export class SettingsChannelHandler {
             return
         }
 
-        const endpoint = this.pvApiService.routes.setting(setting.value)
+        const settingName: Record<string, string> = {
+            timeout_log_channel_id: 'timeouts',
+            leave_log_channel_id: 'leaves',
+            channel_updates_log_channel_id: 'text channel updates',
+            voice_updates_log_channel_id: 'voice channel updates',
+            nickname_updates_log_channel_id: 'nickname updates',
+            report_log_channel_id: 'reports',
+            warn_log_channel_id: 'warns',
+            welcome_channel_id: 'welcomes',
+        }
+
+        const endpoint = this.pvApiService.routes.setting(setting)
 
         try {
             await this.pvApiService.put(endpoint, {
@@ -34,7 +45,7 @@ export class SettingsChannelHandler {
                 body: JSON.stringify({ value: channel.id }),
             })
             await interaction.reply({
-                content: `Updated ${setting.name} to channel [#${channel.name}](${channel.url}).`,
+                content: `Updated ${settingName[setting]} to channel [#${channel.name}](${channel.url}).`,
             })
             return
         } catch {

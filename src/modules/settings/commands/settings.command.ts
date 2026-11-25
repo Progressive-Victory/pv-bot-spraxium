@@ -1,13 +1,4 @@
-import {
-    SlashChannelOptionConfig,
-    SlashCommand,
-    SlashOption,
-    SlashOptionChoice,
-    SlashStringOptionConfig,
-    SlashSubcommand,
-    SlashSubcommandGroup,
-    SlashSubcommandGroups,
-} from '@spraxium/common'
+import { SlashCommand, SlashOption, SlashSubcommand } from '@spraxium/common'
 import { ChannelType } from 'discord.js'
 
 @SlashCommand({
